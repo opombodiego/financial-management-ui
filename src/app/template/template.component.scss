@@ -1,0 +1,91 @@
+@import 'vars';
+
+$sidebar-desktop-open: 260px;
+$sidebar-desktop-close: 80px;
+
+$sidebar-mobile-open: 260px;
+$sidebar-mobile-close: -260px;
+
+#sidebar {
+  position: fixed;
+  background-color: $blue-dark1;
+  top: 0;
+  left: 0;
+  height: $height-100;
+  z-index: 999;
+  transition: ease-in-out 0.4s;
+
+  &.mobile {
+    width: $sidebar-mobile-open;
+    &.collapsed {
+      left: $sidebar-mobile-close;
+    }
+  }
+
+  &.desktop {
+    width: $sidebar-desktop-open;
+    &.collapsed {
+      width: $sidebar-desktop-close;
+    }
+  }
+
+  #header {
+    height: 60px;
+    h1 {
+      color: $blue;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    i.icon {
+      font-size: 18px;
+      margin-right: 5px;
+      color: $blue;
+    }
+    i.collapsed-icon {
+      font-size: 22px;
+      color: $blue;
+    }
+  }
+}
+
+#main {
+  background-color: $blue-dark2;
+  min-height: $height-100;
+  transition: ease-in-out 0.4s;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  &.mobile {
+    width: $width-100 !important;
+  }
+
+  &.desktop {
+    width: calc(#{$width-100} - #{$sidebar-desktop-open});
+    &.collapsed {
+      width: calc(#{$width-100} - #{$sidebar-desktop-close});
+    }
+  }
+
+  #section {
+    background-color: $blue-dark1;
+    height: 60px;
+    i {
+      cursor: pointer;
+      font-size: 30px;
+      color: $blue;
+    }
+  }
+}
+
+/* OVERLAY */
+.overlay {
+  display: block;
+  opacity: 1;
+  position: fixed;
+  width: $width-100;
+  height: $height-100;
+  background: $opacity;
+  z-index: 998;
+  transition: all 0.5s ease-in-out;
+}

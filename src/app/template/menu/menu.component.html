@@ -1,0 +1,16 @@
+<nav id="menu" class="d-flex mt-4">
+  <ul class="list-group w-100">
+    <li class="d-flex" [class.justify-content-center]="iconsMenu">
+      <a routerLink="/" routerLinkActive="active">
+        <i class="bi bi-graph-up-arrow" [ngClass]="iconsMenu ? 'collapsed-icon' : 'icon'"></i>
+        <span *ngIf="!iconsMenu">Dashboard</span>
+      </a>
+    </li>
+    <li class="d-flex" [class.justify-content-center]="iconsMenu">
+      <a routerLink="/lancamentos" routerLinkActive="active">
+        <i class="bi bi-arrow-down-up" [ngClass]="iconsMenu ? 'collapsed-icon' : 'icon'"></i>
+        <span *ngIf="!iconsMenu">Lançamentos</span>
+      </a>
+    </li>
+  </ul>
+</nav>

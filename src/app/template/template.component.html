@@ -1,0 +1,24 @@
+<div class="d-flex w-100">
+	<aside id="sidebar" [ngClass]="isMobile ? 'mobile' : 'desktop'" [class.collapsed]="!openSidebar">
+		<header id="header" class="d-flex align-items-center justify-content-center shadow">
+      <h1 class="mb-0">
+        <i class="bi bi-currency-dollar" [ngClass]="iconsMenu ? 'collapsed-icon' : 'icon'"></i>
+        <span *ngIf="!iconsMenu">Control Financial</span>
+    	</h1>
+		</header>
+    <app-menu [iconsMenu]="iconsMenu"></app-menu>
+	</aside>
+
+	<main id="main" [ngClass]="isMobile ? 'mobile' : 'desktop'" [class.collapsed]="!openSidebar">
+		<section id="section" class="navbar shadow px-3">
+      <i class="bi bi-list" (click)="toogle"></i>
+      <i class="bi bi-person ml-auto"></i>
+    </section>
+
+		<div class="container-fluid p-5">
+      <router-outlet></router-outlet>
+		</div>
+	</main>
+</div>
+
+<div [class.overlay]="isMobile && openSidebar" (click)="toogle"></div>

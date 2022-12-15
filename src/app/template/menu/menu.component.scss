@@ -1,0 +1,32 @@
+@import 'vars';
+
+#menu {
+  ul {
+    li {
+      padding: 15px 30px;
+      cursor: pointer;
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        color: $blue;
+
+        i.icon {
+          font-size: 20px;
+          color: $blue;
+          margin-right: 15px;
+        }
+
+        i.collapsed-icon {
+          font-size: 22px;
+          color: $blue;
+        }
+      }
+
+      &:hover {
+        border-left: 3px solid $blue;
+        transition: ease-in-out 0.1s;
+        background-color: $blue-dark2;
+      }
+    }
+  }
+}

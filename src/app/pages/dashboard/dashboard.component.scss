@@ -1,0 +1,17 @@
+@import 'vars';
+
+.bg-c-blue, .bg-primary {
+    background: $blue-gradient;
+}
+
+.bg-c-green, .bg-success {
+    background: $green-gradient;
+}
+
+.bg-c-pink, .bg-danger {
+    background: $red-gradient;
+}
+
+.bg-c-yellow {
+    background: $yellow-gradient;
+}
